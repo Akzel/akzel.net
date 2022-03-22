@@ -57,12 +57,14 @@ const Home: NextPage = () => {
             </p>
           </a>
         </div> */}
-      </main>
 
-      <footer className={styles.footer}>
-        {" "}
-        <code className={styles.code}>lessthantwo</code>
-      </footer>
+        <code className={styles.code}>
+          lessthantwo|
+          <Link href="https://www.instagram.com/stories/highlights/17922727208146885/">
+            {"<2"}
+          </Link>
+        </code>
+      </main>
     </div>
   );
 };
