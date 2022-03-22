@@ -12,6 +12,7 @@ export default function Age() {
     { divby: 315360000000, name: "decades", fixed: 10 },
     { divby: 3155760000000, name: "centuries", fixed: 11 },
     { divby: 31556952000000, name: "millennia", fixed: 12 },
+    { divby: 4508136000, name: "dog years", fixed: 8 },
   ];
   const date: number = Date.now();
   const birth: number = 880710600000;
