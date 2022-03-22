@@ -35,7 +35,12 @@ export default function Age() {
           </Listbox.Button>
           <Listbox.Options className="flex flex-column ">
             {measureList.map((m) => (
-              <Listbox.Option key={m.divby} value={m} as="div">
+              <Listbox.Option
+                key={m.divby}
+                value={m}
+                as="div"
+                className={measure.name === m.name ? styles.red : styles.white}
+              >
                 {m.name}
               </Listbox.Option>
             ))}
