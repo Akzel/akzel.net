@@ -67,6 +67,12 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
+.timer {
+  font-size: 1.5rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
 .grid {
   display: flex;
   align-items: center;
@@ -119,5 +125,13 @@
 }
 
 .red {
+  color: red;
+}
+
+.white {
+  color: white !important;
+}
+
+.skull {
   color: red;
 }
