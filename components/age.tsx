@@ -4,13 +4,14 @@ import { Listbox } from "@headlessui/react";
 
 export default function Age() {
   const measureList = [
+    { divby: 1000, name: "seconds", fixed: 2 },
     { divby: 60000, name: "minutes", fixed: 3 },
     { divby: 3600000, name: "hours", fixed: 5 },
     { divby: 86400000, name: "days", fixed: 6 },
     { divby: 31556952000, name: "years", fixed: 9 },
   ];
   const date: number = Date.now();
-  const birth: number = 880709400000;
+  const birth: number = 880710600000;
   const [measure, setMeasure] = useState(measureList[0]);
   const [currentTime, setCurrentTime] = useState(
     date ? new Date(date).getTime() : Date.now()
@@ -21,7 +22,7 @@ export default function Age() {
     const interval = setInterval(() => {
       setCurrentTime(new Date().getTime());
       setAge(((currentTime - birth) / measure.divby).toFixed(measure.fixed));
-    }, 60);
+    }, 10);
     return () => clearInterval(interval);
   });
   return (

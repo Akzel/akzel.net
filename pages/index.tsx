@@ -15,9 +15,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        {/* <h1 className={styles.title}>
           Welcome to <Link href="/api/hello">Akzel.xyz</Link>
-        </h1>
+        </h1> */}
         <p className={styles.description}>
           <Image
             src="/wizard.png"
@@ -60,7 +60,7 @@ const Home: NextPage = () => {
         </div> */}
       </main>
 
-      <footer className={styles.footer}>stonks</footer>
+      {/* <footer className={styles.footer}>stonks</footer> */}
     </div>
   );
 };
