@@ -9,6 +9,9 @@ export default function Age() {
     { divby: 3600000, name: "hours", fixed: 5 },
     { divby: 86400000, name: "days", fixed: 6 },
     { divby: 31556952000, name: "years", fixed: 9 },
+    { divby: 315360000000, name: "decades", fixed: 10 },
+    { divby: 3155760000000, name: "centuries", fixed: 11 },
+    { divby: 31556952000000, name: "millennia", fixed: 12 },
   ];
   const date: number = Date.now();
   const birth: number = 880710600000;
