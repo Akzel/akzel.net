@@ -27,7 +27,6 @@ const Home: NextPage = () => {
           ></Image>
 
           {Age()}
-          <code className={styles.code}>this took far too long </code>
         </p>
         {/* <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
@@ -60,7 +59,10 @@ const Home: NextPage = () => {
         </div> */}
       </main>
 
-      {/* <footer className={styles.footer}>stonks</footer> */}
+      <footer className={styles.footer}>
+        {" "}
+        <code className={styles.code}>lessthantwo</code>
+      </footer>
     </div>
   );
 };
