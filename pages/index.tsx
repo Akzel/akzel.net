@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import age from "../components/age";
 
 const Home: NextPage = () => {
   return (
@@ -17,13 +18,14 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <Link href="/api/hello">Akzel.xyz</Link>
         </h1>
-        <a href="https://nextjs.org/docs" className={styles.card}>
+        <div className={styles.card}>
           <Image src="/wizard.png" width={100} height={150}></Image>
-        </a>
+        </div>
         <p className={styles.description}>
-          <code className={styles.code}>new and improved (?)</code>
+          {age()}
+          <code className={styles.code}>this took far too long </code>
         </p>
-        <div className={styles.grid}>
+        {/* <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
@@ -51,7 +53,7 @@ const Home: NextPage = () => {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
 
       <footer className={styles.footer}>
