@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import { Listbox } from "@headlessui/react";
 
-export default function age() {
+export default function Age() {
   const measureList = [
     { divby: 60000, name: "minutes", fixed: 3 },
     { divby: 3600000, name: "hours", fixed: 5 },
@@ -35,16 +35,7 @@ export default function age() {
           <Listbox.Options className="flex flex-column ">
             {measureList.map((m) => (
               <Listbox.Option key={m.divby} value={m} as="div">
-                {({ active, selected }) => (
-                  <li
-                    className={`${
-                      active ? "bg-blue-500 text-white" : "bg-white text-black"
-                    }`}
-                  >
-                    {selected}
-                    {m.name}
-                  </li>
-                )}
+                {m.name}
               </Listbox.Option>
             ))}
           </Listbox.Options>

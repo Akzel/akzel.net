@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import age from "../components/age";
+import Age from "../components/age";
 
 const Home: NextPage = () => {
   return (
@@ -18,11 +18,15 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <Link href="/api/hello">Akzel.xyz</Link>
         </h1>
-        <div className={styles.card}>
-          <Image src="/wizard.png" width={100} height={150}></Image>
-        </div>
         <p className={styles.description}>
-          {age()}
+          <Image
+            src="/wizard.png"
+            width={100}
+            height={150}
+            alt="amazing picture of pixel art wizard"
+          ></Image>
+
+          {Age()}
           <code className={styles.code}>this took far too long </code>
         </p>
         {/* <div className={styles.grid}>
@@ -56,18 +60,7 @@ const Home: NextPage = () => {
         </div> */}
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <footer className={styles.footer}>stonks</footer>
     </div>
   );
 };
