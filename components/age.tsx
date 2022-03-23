@@ -50,7 +50,6 @@ export default function Age() {
             ))}
           </Listbox.Options>
         </Listbox>{" "}
-        {/* {measure.divby} */}
       </h1>
     </>
   );
