@@ -18,11 +18,11 @@ export default function Welcome() {
         </a>
 
         <footer className={styles.footer}>
-          <Link scroll={true} href="#age">
-            &#9650;
+          <Link href="#age">
+            <a className={styles.scrollBtn}>&#9650;</a>
           </Link>
           <Link scroll={true} href="#Contact">
-            &#9660;
+            <a className={styles.scrollBtn}>&#9660;</a>
           </Link>
         </footer>
       </main>

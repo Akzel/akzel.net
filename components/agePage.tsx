@@ -25,7 +25,7 @@ export default function AgePage() {
         </code>
         <footer className={styles.footer}>
           <Link scroll={true} href="#Welcome">
-            &#9660;
+            <a className={styles.scrollBtn}>&#9660;</a>
           </Link>
         </footer>
       </main>

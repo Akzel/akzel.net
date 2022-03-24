@@ -52,8 +52,8 @@ export default function Contact() {
           </a>
 
           <footer className={styles.footer}>
-            <Link scroll={true} href="#Welcome">
-              &#9650;
+            <Link href="#Welcome">
+              <a className={styles.scrollBtn}>&#9650;</a>
             </Link>
           </footer>
           <span id="alert" className={styles.orange}></span>

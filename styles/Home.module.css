@@ -182,3 +182,11 @@
   box-shadow: 1px 1px 1px gray;
   display: none;
 }
+
+.scrollBtn {
+  padding: 2rem;
+}
+
+.scrollBtn:hover {
+  color: orange;
+}
