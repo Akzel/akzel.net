@@ -92,9 +92,6 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 25vw;
-  min-width: 15rem;
-  min-height: 13vh;
-  max-height: 20vh;
 }
 
 .social {
