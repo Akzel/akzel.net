@@ -5,7 +5,6 @@ import Link from "next/link";
 import AgePage from "../components/agePage";
 import Welcome from "../components/welcomePage";
 import Contact from "../components/contact";
-import { ToastProvider } from "react-toast-notifications";
 
 const customToast = (children: React.ReactNode) => (
   <div
@@ -30,14 +29,10 @@ const Home: NextPage = () => {
         <meta name="description" content="Made by Axel Magnússon" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ToastProvider
-        placement="bottom-center"
-        components={{ Toast: customToast }}
-      >
-        <AgePage></AgePage>
-        <Welcome></Welcome>
-        <Contact></Contact>
-      </ToastProvider>
+
+      <AgePage></AgePage>
+      <Welcome></Welcome>
+      <Contact></Contact>
     </div>
   );
 };

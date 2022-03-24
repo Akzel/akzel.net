@@ -78,7 +78,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 50vw;
+  max-width: 65vw;
 }
 
 .card {
@@ -98,8 +98,12 @@
 }
 
 .social {
-  margin: 2rem;
-  padding: 1rem;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.social:hover {
+  cursor: pointer;
 }
 
 .card:hover,
