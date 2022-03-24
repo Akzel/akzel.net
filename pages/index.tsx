@@ -7,7 +7,7 @@ import Welcome from "../components/welcomePage";
 import Contact from "../components/contact";
 import { ToastProvider } from "react-toast-notifications";
 
-const customToast = ({ children }) => (
+const customToast = (children: React.ReactNode) => (
   <div
     style={{
       backgroundColor: "#121212",
