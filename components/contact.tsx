@@ -4,14 +4,8 @@ import { SocialIcon } from "react-social-icons";
 import React from "react";
 
 export default function Contact() {
-  const alertElement = document.getElementById("alert");
-  if (alertElement === null) {
-    alert("oops");
-  } else {
-    // since you've done the nullable check
-    // TS won't complain from this point on
-    alertElement.nodeName; // <- no error
-  }
+  const alertElement = document.getElementById("alert")!;
+
   return (
     <>
       {" "}
@@ -27,9 +21,9 @@ export default function Contact() {
               network="discord"
               onClick={() => {
                 navigator.clipboard.writeText("Akzel#6076");
-                alertElement!.innerHTML = "<h1>Copied!: Akzel#6076</a>";
+                alertElement.innerHTML = "<h1>Copied!: Akzel#6076</a>";
                 setTimeout(function () {
-                  alertElement!.innerHTML = "";
+                  alertElement.innerHTML = "";
                 }, 300);
               }}
             ></SocialIcon>
@@ -39,9 +33,9 @@ export default function Contact() {
               network="email"
               onClick={() => {
                 navigator.clipboard.writeText("axel@akzel.xyz");
-                alertElement!.innerHTML = "<h1>Copied!: axel@akzel.xyz</a>";
+                alertElement.innerHTML = "<h1>Copied!: axel@akzel.xyz</a>";
                 setTimeout(function () {
-                  alertElement!.innerHTML = "";
+                  alertElement.innerHTML = "";
                 }, 300);
               }}
             ></SocialIcon>
