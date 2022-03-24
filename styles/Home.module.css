@@ -97,8 +97,8 @@
 
 .social {
   margin-top: 2rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .social:hover {
   cursor: pointer;
