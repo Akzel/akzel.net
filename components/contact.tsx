@@ -21,14 +21,13 @@ export default function Contact() {
                 copyStuff("Akzel#6076");
               }}
             ></SocialIcon>
-
-            <SocialIcon
-              className={styles.social}
-              network="email"
-              onClick={() => {
-                copyStuff("axel@akzel.xyz");
-              }}
-            ></SocialIcon>
+            <a href="mailto:axel@akzel.xyz?Subject=Hello!">
+              <SocialIcon
+                className={styles.social}
+                network="email"
+              ></SocialIcon>
+              &nbsp;
+            </a>
 
             <SocialIcon
               className={styles.social}
