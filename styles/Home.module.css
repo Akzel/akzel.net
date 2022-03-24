@@ -185,6 +185,8 @@
 
 .scrollBtn {
   padding: 2rem;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .scrollBtn:hover {
