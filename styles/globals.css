@@ -1,4 +1,7 @@
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #121212;
   color: #ffffff;
@@ -15,4 +18,19 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+* {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+main {
+  height: 100vh;
+}
+
+div {
+  outline: none;
 }

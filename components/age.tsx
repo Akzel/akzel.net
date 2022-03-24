@@ -16,7 +16,7 @@ export default function Age() {
   ];
   const date: number = Date.now();
   const birth: number = 880710600000;
-  const [measure, setMeasure] = useState(measureList[0]);
+  const [measure, setMeasure] = useState(measureList[4]);
   const [currentTime, setCurrentTime] = useState(
     date ? new Date(date).getTime() : Date.now()
   );
@@ -33,17 +33,21 @@ export default function Age() {
     <>
       <h1>
         Axel is {age}{" "}
-        <Listbox value={measure} onChange={setMeasure} as="a">
+        <Listbox value={measure} onChange={setMeasure} as="div">
           <Listbox.Button as="a">
-            <a className={styles.red}>{measure.name}</a>&#9662; old &#128128;
+            <span className={styles.orange}>{measure.name}</span>&#9662; old
+            &#128128;
           </Listbox.Button>
-          <Listbox.Options className="flex flex-column ">
+          <Listbox.Options className="flex flex-column " as="div">
             {measureList.map((m) => (
               <Listbox.Option
                 key={m.divby}
                 value={m}
                 as="div"
-                className={measure.name === m.name ? styles.red : styles.white}
+                className={
+                  (measure.name === m.name ? styles.orange : styles.white,
+                  styles.clickMe)
+                }
               >
                 {m.name}
               </Listbox.Option>

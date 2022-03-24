@@ -1,0 +1,34 @@
+import styles from "../styles/Home.module.css";
+import Link from "next/link";
+import Image from "next/image";
+import Age from "../components/age";
+
+export default function AgePage() {
+  return (
+    <>
+      <main className={styles.main} id="age">
+        <div className={styles.description}>
+          <Image
+            src="/wizard.png"
+            width={100}
+            height={150}
+            alt="amazing picture of pixel art wizard"
+          ></Image>
+          {Age()}
+        </div>
+
+        <code className={styles.code}>
+          lessthantwo|
+          <Link href="https://www.instagram.com/stories/highlights/17922727208146885/">
+            {"<2"}
+          </Link>
+        </code>
+        <footer className={styles.footer}>
+          <Link scroll={true} href="#Welcome">
+            &#9660;
+          </Link>
+        </footer>
+      </main>
+    </>
+  );
+}
