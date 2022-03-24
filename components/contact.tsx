@@ -5,8 +5,6 @@ import React from "react";
 
 export default function Contact() {
   if (typeof window !== "undefined") {
-    const alertElement = document.getElementById("alert")!;
-
     return (
       <>
         {" "}
@@ -16,16 +14,11 @@ export default function Contact() {
           </h1>
 
           <a>
-            <div className={styles.notify}>Copied!</div>
             <SocialIcon
               className={styles.social}
               network="discord"
               onClick={() => {
-                navigator.clipboard.writeText("Akzel#6076");
-                alertElement.innerHTML = "<h1>Copied!: Akzel#6076</a>";
-                setTimeout(function () {
-                  alertElement.innerHTML = "";
-                }, 300);
+                copyStuff("Akzel#6076");
               }}
             ></SocialIcon>
 
@@ -33,11 +26,7 @@ export default function Contact() {
               className={styles.social}
               network="email"
               onClick={() => {
-                navigator.clipboard.writeText("axel@akzel.xyz");
-                alertElement.innerHTML = "<h1>Copied!: axel@akzel.xyz</a>";
-                setTimeout(function () {
-                  alertElement.innerHTML = "";
-                }, 300);
+                copyStuff("axel@akzel.xyz");
               }}
             ></SocialIcon>
 
@@ -52,15 +41,28 @@ export default function Contact() {
           </a>
 
           <footer className={styles.footer}>
-            <Link href="#Welcome">
-              <a className={styles.scrollBtn}>&#9650;</a>
+            <Link scroll={true} href="#Welcome">
+              &#9650;
             </Link>
           </footer>
-          <span id="alert" className={styles.orange}></span>
+          <div className={styles.alertBox}>
+            <span id="alert" className={styles.orange}>
+              &nbsp;
+            </span>
+          </div>
         </main>
       </>
     );
   } else {
     return <h1>oopsie...</h1>;
   }
+}
+
+function copyStuff(text: string) {
+  navigator.clipboard.writeText(text);
+  document.getElementById("alert")!.innerHTML =
+    "<h1>Copied!: " + text + "</h1>";
+  setTimeout(function () {
+    document.getElementById("alert")!.innerHTML = "";
+  }, 500);
 }
