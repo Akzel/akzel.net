@@ -91,7 +91,8 @@
   border: 0.1px solid rgba(255, 255, 255, 0.01);
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 25vw;
+
+  max-width: 75vw;
 }
 
 .social {
