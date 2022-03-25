@@ -12,8 +12,7 @@ export default function Contact() {
           <h1 className={styles.title}>
             Get in <a>touch!</a>
           </h1>
-
-          <a>
+          <div>
             <SocialIcon
               className={styles.social}
               network="discord"
@@ -37,8 +36,7 @@ export default function Contact() {
               className={styles.social}
               url="https://www.linkedin.com/in/axel-magn%C3%BAsson-912528227/"
             ></SocialIcon>
-          </a>
-
+          </div>
           <footer className={styles.footer}>
             <Link scroll={true} href="#Welcome">
               <a className={styles.scrollBtn}>&#9650;</a>
