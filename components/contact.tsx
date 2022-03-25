@@ -6,7 +6,7 @@ import React from "react";
 export default function Contact() {
   if (typeof window !== "undefined") {
     return (
-      <>
+      <div>
         {" "}
         <main className={styles.main} id="Contact">
           <h1 className={styles.title}>
@@ -19,15 +19,12 @@ export default function Contact() {
               onClick={() => {
                 copyStuff("Akzel#6076");
               }}
+            ></SocialIcon>{" "}
+            <SocialIcon
+              className={styles.social}
+              network="email"
+              href="mailto:axel@akzel.xyz?Subject=Hello!"
             ></SocialIcon>
-            <a href="mailto:axel@akzel.xyz?Subject=Hello!">
-              <SocialIcon
-                className={styles.social}
-                network="email"
-              ></SocialIcon>
-              &nbsp;
-            </a>
-
             <SocialIcon
               className={styles.social}
               url="https://www.instagram.com/axel_____________/"
@@ -42,13 +39,9 @@ export default function Contact() {
               <a className={styles.scrollBtn}>&#9650;</a>
             </Link>
           </footer>
-          <div className={styles.alertBox}>
-            <span id="alert" className={styles.orange}>
-              &nbsp;
-            </span>
-          </div>
+          <div className={(styles.alertBox, styles.orange)} id="alert"></div>
         </main>
-      </>
+      </div>
     );
   } else {
     return <h1>oopsie...</h1>;
