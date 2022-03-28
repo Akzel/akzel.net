@@ -35,8 +35,7 @@ export default function Age() {
         Axel is {age}{" "}
         <Listbox value={measure} onChange={setMeasure} as="div">
           <Listbox.Button as="a">
-            <span className={styles.orange}>{measure.name}</span>&#9662; old
-            &#128128;
+            <a className={styles.orange}>{measure.name}</a>&#9662; old &#128128;
           </Listbox.Button>
           <Listbox.Options className="flex flex-column " as="div">
             {measureList.map((m) => (
