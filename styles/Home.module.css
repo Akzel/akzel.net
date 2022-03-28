@@ -142,8 +142,12 @@
   color: white !important;
 }
 
-.skull {
-  color: red;
+.ageBtn {
+  color: orange;
+}
+
+.ageBtn:hover {
+  cursor: pointer;
 }
 
 .test {
