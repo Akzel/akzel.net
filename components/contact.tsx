@@ -20,11 +20,12 @@ export default function Contact() {
                 copyStuff("Akzel#6076");
               }}
             ></SocialIcon>{" "}
-            <SocialIcon
-              className={styles.social}
-              network="email"
-              href="mailto:axel@akzel.xyz?Subject=Hello!"
-            ></SocialIcon>
+            <a href="mailto:axel@akzel.xyz?Subject=Hello!">
+              <SocialIcon
+                className={styles.social}
+                network="email"
+              ></SocialIcon>
+            </a>
             <SocialIcon
               className={styles.social}
               url="https://www.instagram.com/axel_____________/"
