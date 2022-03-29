@@ -35,7 +35,7 @@ export default function Contact() {
             ></SocialIcon>
           </div>
           <footer className={styles.footer}>
-            <Link scroll={true} href="#Welcome">
+            <Link scroll={true} href="#LoL">
               <a className={styles.scrollBtn}>&#9650;</a>
             </Link>
           </footer>

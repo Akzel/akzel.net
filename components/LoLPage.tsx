@@ -30,7 +30,7 @@ export default function LoL({
     return (
       <>
         {" "}
-        <main className={styles.main} id="Welcome">
+        <main className={styles.main} id="LoL">
           <h1 className={styles.title}>
             I really like <a>League of legends</a>
           </h1>
