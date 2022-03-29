@@ -28,7 +28,7 @@ export async function getStaticProps() {
     )[0];
     mastery[i].championName = champion.name;
     var nospaceName = champion.name.replace(/ /g, "");
-    mastery[i].imageLocation = `../championicons/${nospaceName}_0.jpg`;
+    mastery[i].imageLocation = `/championicons/${nospaceName}_0.jpg`;
   }
 
   return {
