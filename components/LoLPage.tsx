@@ -25,7 +25,7 @@ export default function LoL({
 }: InferGetServerSidePropsType<GetServerSideProps>) {
   const flex: gameDataProps = summoner![0];
   const solo: gameDataProps = summoner![1];
-  console.log(mastery);
+  // console.log(mastery);
   return (
     <>
       {" "}
