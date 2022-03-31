@@ -21,6 +21,19 @@ export async function getStaticProps() {
     masteryRes.json(),
   ]);
 
+  var solo: any = null;
+  var flex: any = null;
+
+  for (var i = 0; i < summoner.length; i++) {
+    if (summoner[i].queueType == "RANKED_SOLO_5x5") {
+      solo = summoner[i];
+    }
+    if (summoner[i].queueType == "RANKED_FLEX_SR") {
+      flex = summoner[i];
+    }
+  }
+  console.log(flex);
+
   for (var i = 0; i < mastery.length; i++) {
     var { championId } = mastery[i];
     var champion = championNames.filter(
@@ -36,7 +49,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      summoner,
+      solo,
+      flex,
       mastery,
     },
     // Next.js will attempt to re-generate the page:
@@ -46,7 +60,7 @@ export async function getStaticProps() {
   };
 }
 
-const Home: NextPage = ({ summoner, mastery }: any) => {
+const Home: NextPage = ({ solo, flex, mastery }: any) => {
   // for (var i = 0; mastery.list.length(); i++)
   return (
     <div>
@@ -72,7 +86,7 @@ const Home: NextPage = ({ summoner, mastery }: any) => {
         />
       </Head>
       <AgePage />
-      <LoL summoner={summoner} mastery={mastery} />
+      <LoL solo={solo} flex={flex} mastery={mastery} />
       <Contact />
     </div>
   );

@@ -20,13 +20,12 @@ interface gameDataProps {
 }
 
 export default function LoL({
-  summoner,
+  solo,
+  flex,
   mastery,
 }: InferGetServerSidePropsType<GetServerSideProps>) {
-  const flex: gameDataProps = summoner[0];
-  const solo: gameDataProps = summoner[1];
   // console.log(mastery);
-  if (flex) {
+  if (solo && flex) {
     return (
       <>
         {" "}
@@ -50,7 +49,9 @@ export default function LoL({
                     {solo.tier} {solo.rank} -- {solo.leaguePoints}LP
                   </li>
                   <li>
-                    {solo.wins}W/{solo.losses}L
+                    {solo.wins}W/{solo.losses}L&ensp;
+                    {((100 * solo.wins) / (solo.wins + solo.losses)).toFixed(2)}
+                    %
                   </li>
                 </ul>
               </div>
@@ -67,7 +68,9 @@ export default function LoL({
                     {flex.tier} {flex.rank} -- {flex.leaguePoints}LP
                   </li>
                   <li>
-                    {flex.wins}W/{flex.losses}L
+                    {flex.wins}W/{flex.losses}L&ensp;
+                    {((100 * flex.wins) / (flex.wins + flex.losses)).toFixed(2)}
+                    %
                   </li>
                 </ul>
               </div>
