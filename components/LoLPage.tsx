@@ -32,9 +32,10 @@ export default function LoL({
         {" "}
         <main className={styles.main} id="LoL">
           <h1 className={styles.title}>
-            I really like <a>League of legends</a>
+            I really like <br></br>
+            <a>League of legends</a>
           </h1>
-
+          <br></br>
           <a className={styles.subtitle}>These are my ranks currently</a>
           <div className={styles.grid}>
             <a
