@@ -117,6 +117,40 @@ export default function LoL({
       </>
     );
   } else {
-    return <h1>oopsie! failed to load</h1>;
+    return (
+      <>
+        {" "}
+        <main className={styles.main} id="LoL">
+          <h1 className={styles.title}>
+            I really like <br></br>
+            <a>League of legends</a>
+          </h1>
+          <br></br>
+          <a className={styles.subtitle}>
+            My api key for the riot api has expired...
+          </a>
+          <div className={styles.grid}>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://u.gg/lol/profile/eun1/akzel/overview"
+            >
+              <div className={styles.card}>
+                <h1>Here is a link to my u.gg profile</h1>
+              </div>
+            </a>
+          </div>
+
+          <footer className={styles.footer}>
+            <Link href="#age">
+              <a className={styles.scrollBtn}>&#9650;</a>
+            </Link>
+            <Link scroll={true} href="#Contact">
+              <a className={styles.scrollBtn}>&#9660;</a>
+            </Link>
+          </footer>
+        </main>
+      </>
+    );
   }
 }
