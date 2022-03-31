@@ -55,17 +55,23 @@ export default function LoL({
                 </ul>
               </div>
             </a>
-            <div className={styles.card}>
-              <h1>FlexQueue</h1>
-              <ul>
-                <li>
-                  {flex.tier} {flex.rank} -- {flex.leaguePoints}LP
-                </li>
-                <li>
-                  {flex.wins}W/{flex.losses}L
-                </li>
-              </ul>
-            </div>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://u.gg/lol/profile/eun1/akzel/overview"
+            >
+              <div className={styles.card}>
+                <h1>FlexQueue</h1>
+                <ul>
+                  <li>
+                    {flex.tier} {flex.rank} -- {flex.leaguePoints}LP
+                  </li>
+                  <li>
+                    {flex.wins}W/{flex.losses}L
+                  </li>
+                </ul>
+              </div>
+            </a>
           </div>
           <a className={styles.subtitleX}>These are my most played champions</a>
           <div className={styles.champgrid}>

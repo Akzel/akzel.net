@@ -111,6 +111,7 @@
   flex-direction: row;
   flex-wrap: wrap !important;
   width: 100%;
+  height: 50vh;
 }
 
 .social {
@@ -179,7 +180,6 @@
   }
   .champMastery {
     border-radius: 0px;
-
     position: absolute;
     bottom: 0px;
     background: none !important;
@@ -207,16 +207,24 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background: rgba(0, 0, 0, 0.7);
+  -webkit-transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  -o-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
 }
 
 .champMastery {
-  z-index: 1000;
   position: absolute;
   width: 200px;
-  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  bottom: 0px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  bottom: 0px;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  -o-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
 }
 
 .champcard {
@@ -226,13 +234,32 @@
   height: 200px;
   text-align: center;
   margin: 0.5rem;
+  -webkit-transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  -o-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+}
+
+.champcard:hover,
+.champcard:focus,
+.champcard:active {
+  height: 220px;
+  width: 220px;
+}
+.champcard:hover .champMastery {
+  width: 220px;
+}
+.champcard:hover .champName {
+  width: 220px;
+}
+.champcard:hover .image {
+  width: 220px;
 }
 
 .champcard a:hover,
 .champcard a:focus,
 .champcard a:active {
   color: orange;
-  border-color: orange;
 }
 
 .orange {
@@ -287,4 +314,8 @@
   border-radius: 10px;
   position: relative;
   top: 0px;
+  -webkit-transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  -o-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
 }
