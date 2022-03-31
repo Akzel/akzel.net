@@ -116,10 +116,8 @@
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap !important;
+  width: 100%;
 }
-
-
-
 
 .social {
   margin-top: 2rem;
@@ -156,7 +154,7 @@
 .card {
   margin: 1rem;
   padding: 1.5rem;
-  text-align: left;
+  text-align: center;
   color: inherit;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.01);
@@ -167,50 +165,41 @@
 }
 
 @media (max-width: 600px) {
-  .main{height :100vh}
+  .main {
+    height: 100vh;
+  }
 
   .grid {
-    
     flex-direction: row !important;
   }
-  .card{
+  .card {
     width: 25vw;
   }
 
-.card h1{
-  font-size: small;
-}
+  .card h1 {
+    font-size: small;
+  }
 
   .image {
     display: none;
   }
   .champMastery {
-    display: none;
-    background:none
+    border-radius: 0px;
+    background: rgba(255, 255, 255, 0) !important;
+    position: relative;
+    bottom: 0px;
+    /* display: none; */
+    /* background:none */
   }
 
-  .champcard {
-   height: fit-content !important;
-   
-  }
-  .champName{
-    /* position:relative; */
-    /* top: 0px !important; */
+  .champName {
     background: rgba(255, 255, 255, 0.01) !important;
-    border-top-left-radius: 0px !important;
-    border-top-right-radius: 0px !important;
-    padding: 0.3rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    
-    width: 100px;
+    border-radius: 10px;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    position: relative;
+    bottom: 0px;
   }
-  .champgrid{
-    /* max-width: 75vw; */
-    flex-direction: column;
-    flex-wrap: wrap !important;
-    align-content: flex-start;
- }
 }
 
 .orange {
@@ -261,40 +250,33 @@
 }
 
 .image {
-  width: 100%;
+  width: 200px;
   border-radius: 10px;
+  position: relative;
+  top: 0px;
 }
 
-
-.champName{
-  position: relative;
-  top:20px;
-  background: rgba(0, 0, 0, 0.9);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.champName {
+  position: absolute;
+  width: 200px;
+  z-index: 1000;
+  top: 0px;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
 }
 
-.champMastery{
-  position: relative;
-  bottom:25px;
-  background: rgba(0, 0, 0, 0.9);
-  border-bottom-left-radius:10px;
-  border-bottom-right-radius:10px;
-
+.champMastery {
+  z-index: 1000;
+  position: absolute;
+  width: 200px;
+  bottom: 0px;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
 }
 
 .champcard {
-  /* 
-  padding: 0px;
-  
-  border-radius: 10%;
-  
-  border: 0.1px solid rgba(255, 255, 255, 0.01);
-  background: rgba(255, 255, 255, 0.01);
-  */ 
-  height: 100%; 
+  position: relative;
   transition: color 0.15s ease, border-color 0.15s ease;
-  width: 10%; 
+  width: 200px;
+  height: 200px;
   text-align: center;
   margin: 0.5rem;
 }
