@@ -31,7 +31,7 @@ export async function getStaticProps() {
     mastery[i].imageLocation = `/static/${nospaceName}_0.jpg`;
     mastery[
       i
-    ].lolalytics = `https://lolalytics.com/lol/${nospaceName.toLowerCase()}/build/`;
+    ].lolalytics = `https://u.gg/lol/profile/eun1/akzel/champion-stats/${nospaceName.toLowerCase()}`;
   }
 
   return {
