@@ -39,19 +39,20 @@ export default function LoL({
           <div className={styles.grid}>
             <a
               target="_blank"
-              className={styles.card}
-              href="https://u.gg/lol/profile/eun1/akzel/overview"
               rel="noreferrer"
+              href="https://u.gg/lol/profile/eun1/akzel/overview"
             >
-              <h1>SoloQueue</h1>
-              <ul>
-                <li>
-                  {solo.tier} {solo.rank} -- {solo.leaguePoints}LP
-                </li>
-                <li>
-                  {solo.wins}W/{solo.losses}L
-                </li>
-              </ul>
+              <div className={styles.card}>
+                <h1>SoloQueue</h1>
+                <ul>
+                  <li>
+                    {solo.tier} {solo.rank} -- {solo.leaguePoints}LP
+                  </li>
+                  <li>
+                    {solo.wins}W/{solo.losses}L
+                  </li>
+                </ul>
+              </div>
             </a>
             <div className={styles.card}>
               <h1>FlexQueue</h1>
@@ -73,20 +74,25 @@ export default function LoL({
                 championName,
                 championPoints,
                 imageLocation,
+                lolalytics,
               } = champ;
 
               return (
                 <div key={championId} className={styles.champcard}>
-                  <strong>{championName}</strong>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={imageLocation}
-                    alt={championName}
-                    className={styles.image}
-                  ></img>
-                  <p>
-                    mastery points: <strong>{championPoints}</strong>
-                  </p>
+                  <a href={lolalytics} target="_blank" rel="noreferrer">
+                    <div className={styles.champName}>
+                      <strong>{championName}</strong>
+                    </div>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={imageLocation}
+                      alt={championName}
+                      className={styles.image}
+                    ></img>
+                    <div className={styles.champMastery}>
+                      mastery points: <strong>{championPoints}</strong>
+                    </div>
+                  </a>
                 </div>
               );
             })}

@@ -29,6 +29,9 @@ export async function getStaticProps() {
     mastery[i].championName = champion.name;
     var nospaceName = champion.name.replace(/ /g, "");
     mastery[i].imageLocation = `/static/${nospaceName}_0.jpg`;
+    mastery[
+      i
+    ].lolalytics = `https://lolalytics.com/lol/${nospaceName.toLowerCase()}/build/`;
   }
 
   return {
