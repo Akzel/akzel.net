@@ -319,3 +319,7 @@
   -o-transition: all 100ms ease-in;
   transition: all 100ms ease-in;
 }
+
+.subsub{
+  font-size: medium;
+}
