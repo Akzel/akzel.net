@@ -28,7 +28,7 @@ export default function Contact() {
             </a>
             <SocialIcon
               className={styles.social}
-              url="https://www.instagram.com/axel_____________/"
+              url="https://www.instagram.com/akzel_____/"
             ></SocialIcon>
             <SocialIcon
               className={styles.social}
