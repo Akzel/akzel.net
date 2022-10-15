@@ -10,6 +10,7 @@ const SummonerEndpoint = `https://eun1.api.riotgames.com/lol/league/v4/entries/b
 const masteryEndpoint = `https://eun1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/G6Y_QbNtK_sFxzr6x4ywui12MzlA8vMAvWvSuqWG6qINzMw?api_key=${process.env.RIOT_API_KEY}`;
 const championEndpoint = `http://ddragon.leagueoflegends.com/cdn/12.6.1/data/en_US/champion.json`;
 
+
 // This function gets called at build time on server-side.
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
