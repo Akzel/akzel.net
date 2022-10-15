@@ -4,8 +4,8 @@ import AgePage from "../components/agePage";
 import LoL from "../components/LoLPage";
 import Contact from "../components/contact";
 
-const SummonerEndpoint = `https://eun1.api.riotgames.com/lol/league/v4/entries/by-summoner/F1FFlvbNy2brAjyK3dvhQvCpTj-Z8r4DArTuHWgf_KSpmjU?api_key=${process.env.RIOT_API_KEY}`;
-const masteryEndpoint = `https://eun1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/F1FFlvbNy2brAjyK3dvhQvCpTj-Z8r4DArTuHWgf_KSpmjU?api_key=${process.env.RIOT_API_KEY}`;
+const SummonerEndpoint = `https://eun1.api.riotgames.com/lol/league/v4/entries/by-summoner/G6Y_QbNtK_sFxzr6x4ywui12MzlA8vMAvWvSuqWG6qINzMw?api_key=${process.env.RIOT_API_KEY}`;
+const masteryEndpoint = `https://eun1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/G6Y_QbNtK_sFxzr6x4ywui12MzlA8vMAvWvSuqWG6qINzMw?api_key=${process.env.RIOT_API_KEY}`;
 // const championEndpoint = `http://ddragon.leagueoflegends.com/cdn/12.6.1/data/en_US/champion.json`;
 
 // This function gets called at build time on server-side.
