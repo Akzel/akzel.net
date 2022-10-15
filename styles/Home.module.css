@@ -230,8 +230,8 @@
 .champcard {
   position: relative;
   transition: color 0.15s ease, border-color 0.15s ease;
-  width: 200px;
-  height: 200px;
+  width: 200px !important;
+  height: 118px !important;
   text-align: center;
   margin: 0.5rem;
   -webkit-transition: all 100ms ease-in;
@@ -243,18 +243,11 @@
 .champcard:hover,
 .champcard:focus,
 .champcard:active {
-  height: 220px;
-  width: 220px;
+  height: 200px;
+  width: 118px;
 }
-.champcard:hover .champMastery {
-  width: 220px;
-}
-.champcard:hover .champName {
-  width: 220px;
-}
-.champcard:hover .image {
-  width: 220px;
-}
+
+
 
 .champcard a:hover,
 .champcard a:focus,

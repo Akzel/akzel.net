@@ -4,21 +4,25 @@ import AgePage from "../components/agePage";
 import LoL from "../components/LoLPage";
 import Contact from "../components/contact";
 
-const SummonerEndpoint = `https://eun1.api.riotgames.com/lol/league/v4/entries/by-summoner/F1FFlvbNy2brAjyK3dvhQvCpTj-Z8r4DArTuHWgf_KSpmjU?api_key=${process.env.RIOT_API_KEY}`;
-const masteryEndpoint = `https://eun1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/F1FFlvbNy2brAjyK3dvhQvCpTj-Z8r4DArTuHWgf_KSpmjU?api_key=${process.env.RIOT_API_KEY}`;
-// const championEndpoint = `http://ddragon.leagueoflegends.com/cdn/12.6.1/data/en_US/champion.json`;
+
+
+const SummonerEndpoint = `https://eun1.api.riotgames.com/lol/league/v4/entries/by-summoner/G6Y_QbNtK_sFxzr6x4ywui12MzlA8vMAvWvSuqWG6qINzMw?api_key=${process.env.RIOT_API_KEY}`;
+const masteryEndpoint = `https://eun1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/G6Y_QbNtK_sFxzr6x4ywui12MzlA8vMAvWvSuqWG6qINzMw?api_key=${process.env.RIOT_API_KEY}`;
+const championEndpoint = `http://ddragon.leagueoflegends.com/cdn/12.6.1/data/en_US/champion.json`;
 
 // This function gets called at build time on server-side.
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
 export async function getStaticProps() {
-  const [summonerRes, masteryRes] = await Promise.all([
+  const [summonerRes, masteryRes, championsRes] = await Promise.all([
     fetch(SummonerEndpoint),
     fetch(masteryEndpoint),
+    fetch(championEndpoint),
   ]);
-  const [summoner, mastery] = await Promise.all([
+  const [summoner, mastery, champions] = await Promise.all([
     summonerRes.json(),
     masteryRes.json(),
+    championsRes.json(),
   ]);
 
   var solo: any = null;
@@ -32,20 +36,24 @@ export async function getStaticProps() {
       flex = summoner[i];
     }
   }
-  console.log(flex);
 
   for (var i = 0; i < mastery.length; i++) {
-    var { championId } = mastery[i];
-    var champion = championNames.filter(
-      (champion) => champion.id == championId
-    )[0];
-    mastery[i].championName = champion.name;
-    var nospaceName = champion.name.replace(/ /g, "");
-    mastery[i].imageLocation = `/static/${nospaceName}_0.jpg`;
-    mastery[
-      i
-    ].lolalytics = `https://u.gg/lol/profile/eun1/akzel/champion-stats/${nospaceName.toLowerCase()}`;
+    for (var j = 0; j < Object.keys(champions.data).length; j++) {
+      if (mastery[i].championId == champions.data[Object.keys(champions.data)[j]].key) {
+        
+        mastery[i].championName = champions.data[Object.keys(champions.data)[j]].name;
+        mastery[i].nospaceName = champions.data[Object.keys(champions.data)[j]].name.replace(/ /g, "");
+        console.log(champions.data[Object.keys(champions.data)[j]].image)
+        mastery[i].championImage = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/"+champions.data[Object.keys(champions.data)[j]].image.full.slice(0, -4)+"_0.jpg";
+        console.log("MATCHED", mastery[i]);
+      }
+   
+    // mastery[i].championImage = champions.data[mastery[i].championId].image.full;
+    // mastery[i].championName = champion.name;
+    // mastery[i].imageLocation = `/static/${nospaceName}_0.jpg`;
+    // mastery[i].lolalytics = `https://u.gg/lol/profile/eun1/akzel/champion-stats/${nospaceName.toLowerCase()}`;
   }
+}
 
   return {
     props: {

@@ -24,7 +24,7 @@ export default function LoL({
   flex,
   mastery,
 }: InferGetServerSidePropsType<GetServerSideProps>) {
-  // console.log(mastery);
+  console.log("poop:",mastery);
   if (solo && flex) {
     return (
       <>
@@ -83,7 +83,7 @@ export default function LoL({
                 championId,
                 championName,
                 championPoints,
-                imageLocation,
+                championImage,
                 lolalytics,
               } = champ;
 
@@ -95,7 +95,7 @@ export default function LoL({
                     </div>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={imageLocation}
+                      src={championImage}
                       alt={championName}
                       className={styles.image}
                     ></img>
