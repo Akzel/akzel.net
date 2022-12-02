@@ -24,7 +24,7 @@ export default function LoL({
   flex,
   mastery,
 }: InferGetServerSidePropsType<GetServerSideProps>) {
-  console.log("poop:",mastery);
+  
   if (solo && flex) {
     return (
       <>
@@ -35,7 +35,9 @@ export default function LoL({
             <a>League of legends</a>
           </h1>
           <br></br>
+          {/*
           <a className={styles.subtitle}>These are my ranks currently</a><br></br><a className={styles.subsub}>(this data is fetched from the riot API then processed to add images among other things)</a>
+         */}
           <div className={styles.grid}>
             <a
               target="_blank"
