@@ -45,7 +45,7 @@ export default function LoL({
               href="https://u.gg/lol/profile/eun1/akzel/overview"
             >
               <div className={styles.card}>
-                <h1>SoloQueue</h1>
+                <h1>Solo queue</h1>
                 <ul>
                   <li>
                     {solo.tier} {solo.rank} -- {solo.leaguePoints}LP
@@ -64,7 +64,7 @@ export default function LoL({
               href="https://u.gg/lol/profile/eun1/akzel/overview"
             >
               <div className={styles.card}>
-                <h1>FlexQueue</h1>
+                <h1>Flex queue</h1>
                 <ul>
                   <li>
                     {flex.tier} {flex.rank} -- {flex.leaguePoints}LP
@@ -78,7 +78,7 @@ export default function LoL({
               </div>
             </a>
           </div>
-          <a className={styles.subtitleX}>These are my most played champions</a>
+          {/*<a className={styles.subtitleX}>These are my most played champions</a>*/}
           <div className={styles.champgrid}>
             {mastery.slice(0, 6).map((champ: any) => {
               const {
