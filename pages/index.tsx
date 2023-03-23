@@ -47,7 +47,7 @@ export async function getStaticProps() {
         console.log(champions.data[Object.keys(champions.data)[j]].image)
         mastery[i].championImage = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/"+champions.data[Object.keys(champions.data)[j]].image.full.slice(0, -4)+"_0.jpg";
         console.log("MATCHED", mastery[i]);
-        mastery[i].lolalytics = `https://u.gg/lol/profile/eun1/akzel/champion-stats/${nospaceName.toLowerCase()}`;
+        mastery[i].lolalytics = `https://u.gg/lol/profile/eun1/akzel/champion-stats/${mastery[i].nospaceName.toLowerCase()}`;
       }
    
     // mastery[i].championImage = champions.data[mastery[i].championId].image.full;
