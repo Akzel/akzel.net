@@ -95,7 +95,7 @@ const Home: NextPage = ({ solo, flex, mastery }: any) => {
         />
       </Head>
       <AgePage />
-      <LoL solo={solo} flex={flex} mastery={mastery} />
+     // <LoL solo={solo} flex={flex} mastery={mastery} />
       <Contact />
     </div>
   );
