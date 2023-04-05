@@ -24,7 +24,6 @@ export default function LoL({
   flex,
   mastery,
 }: InferGetServerSidePropsType<GetServerSideProps>) {
-  
   if (solo && flex) {
     return (
       <>
