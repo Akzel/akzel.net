@@ -75,7 +75,7 @@ const Home: NextPage = ({ solo, flex, mastery }: any) => {
   return (
     <div>
       <Head>
-        <title>Akzel.xyz</title>
+        <title>Hi.</title>
         <meta name="description" content="Made by Axel Magnússon" />
         <link rel="icon" href="/favicon.ico" />
         <script
