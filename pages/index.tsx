@@ -41,7 +41,7 @@ export async function getStaticProps() {
   for (var i = 0; i < mastery.length; i++) {
     for (var j = 0; j < Object.keys(champions.data).length; j++) {
       if (mastery[i].championId == champions.data[Object.keys(champions.data)[j]].key) {
-        
+
         mastery[i].championName = champions.data[Object.keys(champions.data)[j]].name;
         mastery[i].nospaceName = champions.data[Object.keys(champions.data)[j]].name.replace(/ /g, "");
         console.log(champions.data[Object.keys(champions.data)[j]].image)
@@ -49,7 +49,7 @@ export async function getStaticProps() {
         console.log("MATCHED", mastery[i]);
         mastery[i].lolalytics = `https://u.gg/lol/profile/eun1/akzel/champion-stats/${mastery[i].nospaceName.toLowerCase()}`;
       }
-   
+
     // mastery[i].championImage = champions.data[mastery[i].championId].image.full;
     // mastery[i].championName = champion.name;
     // mastery[i].imageLocation = `/static/${nospaceName}_0.jpg`;
@@ -78,25 +78,9 @@ const Home: NextPage = ({ solo, flex, mastery }: any) => {
         <title>Hi.</title>
         <meta name="description" content="Made by Axel Magnússon" />
         <link rel="icon" href="/favicon.ico" />
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-              page_path: window.location.pathname,
-            });
-          `,
-          }}
-        />
       </Head>
       <AgePage />
-      
+
       <Contact />
     </div>
   );
