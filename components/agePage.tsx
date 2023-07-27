@@ -17,16 +17,7 @@ export default function AgePage() {
           {Age()}
         </div>
 
-        <code className={styles.code}>
-          lessthantwo|
-          <a
-            href="https://www.instagram.com/stories/highlights/17922727208146885/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {"<2"}
-          </a>
-        </code>
+
         <footer className={styles.footer}>
           <Link scroll={true} href="#Contact">
             <a className={styles.scrollBtn}>&#9660;</a>
