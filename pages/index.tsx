@@ -3,13 +3,11 @@ import Head from "next/head";
 import AgePage from "../components/agePage";
 import LoL from "../components/LoLPage";
 import Contact from "../components/contact";
-
-
+import { Analytics } from "@vercel/analytics/react";
 
 const SummonerEndpoint = `https://eun1.api.riotgames.com/lol/league/v4/entries/by-summoner/G6Y_QbNtK_sFxzr6x4ywui12MzlA8vMAvWvSuqWG6qINzMw?api_key=${process.env.RIOT_API_KEY}`;
 const masteryEndpoint = `https://eun1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/G6Y_QbNtK_sFxzr6x4ywui12MzlA8vMAvWvSuqWG6qINzMw?api_key=${process.env.RIOT_API_KEY}`;
 const championEndpoint = `http://ddragon.leagueoflegends.com/cdn/12.6.1/data/en_US/champion.json`;
-
 
 // This function gets called at build time on server-side.
 // It may be called again, on a serverless function, if
@@ -40,22 +38,37 @@ export async function getStaticProps() {
 
   for (var i = 0; i < mastery.length; i++) {
     for (var j = 0; j < Object.keys(champions.data).length; j++) {
-      if (mastery[i].championId == champions.data[Object.keys(champions.data)[j]].key) {
-
-        mastery[i].championName = champions.data[Object.keys(champions.data)[j]].name;
-        mastery[i].nospaceName = champions.data[Object.keys(champions.data)[j]].name.replace(/ /g, "");
-        console.log(champions.data[Object.keys(champions.data)[j]].image)
-        mastery[i].championImage = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/"+champions.data[Object.keys(champions.data)[j]].image.full.slice(0, -4)+"_0.jpg";
+      if (
+        mastery[i].championId ==
+        champions.data[Object.keys(champions.data)[j]].key
+      ) {
+        mastery[i].championName =
+          champions.data[Object.keys(champions.data)[j]].name;
+        mastery[i].nospaceName = champions.data[
+          Object.keys(champions.data)[j]
+        ].name.replace(/ /g, "");
+        console.log(champions.data[Object.keys(champions.data)[j]].image);
+        mastery[i].championImage =
+          "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/" +
+          champions.data[Object.keys(champions.data)[j]].image.full.slice(
+            0,
+            -4
+          ) +
+          "_0.jpg";
         console.log("MATCHED", mastery[i]);
-        mastery[i].lolalytics = `https://u.gg/lol/profile/eun1/akzel/champion-stats/${mastery[i].nospaceName.toLowerCase()}`;
+        mastery[
+          i
+        ].lolalytics = `https://u.gg/lol/profile/eun1/akzel/champion-stats/${mastery[
+          i
+        ].nospaceName.toLowerCase()}`;
       }
 
-    // mastery[i].championImage = champions.data[mastery[i].championId].image.full;
-    // mastery[i].championName = champion.name;
-    // mastery[i].imageLocation = `/static/${nospaceName}_0.jpg`;
-    // mastery[i].lolalytics = `https://u.gg/lol/profile/eun1/akzel/champion-stats/${nospaceName.toLowerCase()}`;
+      // mastery[i].championImage = champions.data[mastery[i].championId].image.full;
+      // mastery[i].championName = champion.name;
+      // mastery[i].imageLocation = `/static/${nospaceName}_0.jpg`;
+      // mastery[i].lolalytics = `https://u.gg/lol/profile/eun1/akzel/champion-stats/${nospaceName.toLowerCase()}`;
+    }
   }
-}
 
   return {
     props: {
@@ -80,8 +93,8 @@ const Home: NextPage = ({ solo, flex, mastery }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AgePage />
-
       <Contact />
+      <Analytics />
     </div>
   );
 };
