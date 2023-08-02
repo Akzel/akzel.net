@@ -10,7 +10,7 @@ export default function Contact() {
         {" "}
         <main className={styles.main} id="Contact">
           <h1 className={styles.title}>
-            Get in <a>touch!</a>
+            Very <a>Social!</a>
           </h1>
           <div>
             <SocialIcon
