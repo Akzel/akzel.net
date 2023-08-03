@@ -1,7 +1,7 @@
-import { Fragment, useEffect, useState } from "react";
-import styles from "../styles/Home.module.css";
 import { Listbox } from "@headlessui/react";
-
+import va from "@vercel/analytics";
+import { useEffect, useState } from "react";
+import styles from "../styles/Home.module.css";
 export default function Age() {
   const measureList = [
     { divby: 1000, name: "seconds", fixed: 2 },
@@ -17,6 +17,11 @@ export default function Age() {
   const date: number = Date.now();
   const birth: number = 880710600000;
   const [measure, setMeasure] = useState(measureList[4]);
+  const updateMeasure = (newMeasure: any) => {
+    setMeasure(newMeasure);
+    va.track(`setMeasure(${newMeasure})`);
+  };
+
   const [currentTime, setCurrentTime] = useState(
     date ? new Date(date).getTime() : Date.now()
   );
@@ -33,7 +38,7 @@ export default function Age() {
     <>
       <h1>
         Axel is {age}{" "}
-        <Listbox value={measure} onChange={setMeasure} as="div">
+        <Listbox value={measure} onChange={updateMeasure} as="div">
           <Listbox.Button as="a">
             <a className={styles.ageBtn}>{measure.name}&#9662; </a>
             old &#128128;
