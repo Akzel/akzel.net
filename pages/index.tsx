@@ -98,3 +98,5 @@ const Home: NextPage = ({ solo, flex, mastery }: any) => {
     </div>
   );
 };
+
+export default Home;
