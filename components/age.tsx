@@ -19,7 +19,7 @@ export default function Age() {
   const [measure, setMeasure] = useState(measureList[4]);
   const updateMeasure = (newMeasure: any) => {
     setMeasure(newMeasure);
-    va.track(`setMeasure(${newMeasure})`);
+    va.track("Age", newMeasure);
   };
 
   const [currentTime, setCurrentTime] = useState(
