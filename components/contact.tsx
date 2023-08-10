@@ -20,7 +20,7 @@ export default function Contact() {
                 copyStuff("Akzel#6076");
               }}
             ></SocialIcon>{" "}
-            <a href="mailto:axel@akzel.xyz?Subject=Hello!">
+            <a href="mailto:axel@akzel.net?Subject=Hello!">
               <SocialIcon
                 className={styles.social}
                 network="email"
@@ -32,7 +32,7 @@ export default function Contact() {
             ></SocialIcon>
             <SocialIcon
               className={styles.social}
-              url="https://www.linkedin.com/in/axel-magn%C3%BAsson-912528227/"
+              url="https://www.linkedin.com/in/akzeldotnet/"
             ></SocialIcon>
           </div>
           <footer className={styles.footer}>
