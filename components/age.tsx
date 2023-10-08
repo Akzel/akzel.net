@@ -18,7 +18,6 @@ export default function Age() {
   const birth: number = 880710600000;
   const [measure, setMeasure] = useState(measureList[4]);
   const updateMeasure = (newMeasure: any) => {
-    console.log(newMeasure.name);
     setMeasure(newMeasure);
   };
 
