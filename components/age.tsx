@@ -1,7 +1,7 @@
 import { Listbox } from "@headlessui/react";
-import va from "@vercel/analytics";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
+
 export default function Age() {
   const measureList = [
     { divby: 1000, name: "seconds", fixed: 2 },
@@ -18,12 +18,12 @@ export default function Age() {
   const birth: number = 880710600000;
   const [measure, setMeasure] = useState(measureList[4]);
   const updateMeasure = (newMeasure: any) => {
+    console.log(newMeasure.name);
     setMeasure(newMeasure);
-    va.track("Age", newMeasure);
   };
 
   const [currentTime, setCurrentTime] = useState(
-    date ? new Date(date).getTime() : Date.now()
+    date ? new Date(date).getTime() : Date.now(),
   );
   const [age, setAge] = useState("0");
 
@@ -40,7 +40,7 @@ export default function Age() {
         Axel is {age}{" "}
         <Listbox value={measure} onChange={updateMeasure} as="div">
           <Listbox.Button as="a">
-            <a className={styles.ageBtn}>{measure.name}&#9662; </a>
+            <a className={styles.ageBtn}>{measure.name}&#9662;</a>
             old &#128128;
           </Listbox.Button>
           <Listbox.Options className="flex flex-column " as="div">
@@ -49,16 +49,17 @@ export default function Age() {
                 key={m.divby}
                 value={m}
                 as="div"
-                className={
-                  (measure.name === m.name ? styles.orange : styles.white,
-                  styles.clickMe)
-                }
+                className={(measure.name === m.name
+                  ? styles.orange
+                  : styles.white,
+                  styles.clickMe)}
               >
                 {m.name}
               </Listbox.Option>
             ))}
           </Listbox.Options>
-        </Listbox>{" "}
+        </Listbox>
+        {" "}
       </h1>
     </>
   );
