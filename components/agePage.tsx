@@ -20,7 +20,7 @@ export default function AgePage() {
         >
         </Image>
         <br></br>
-        {ageBuilder()}
+        {AgeBuilder()}
       </div>
       <footer className={styles.footer}>
         <Link scroll={true} href="#Contact">
@@ -31,7 +31,7 @@ export default function AgePage() {
   );
 }
 
-function ageBuilder() {
+function AgeBuilder() {
   const measureList = [
     { divisor: 1000, name: "seconds", fixed: 2 },
     { divisor: 60000, name: "minutes", fixed: 3 },
