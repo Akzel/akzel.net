@@ -4,14 +4,12 @@ import { SocialIcon } from "react-social-icons";
 import React from "react";
 
 export default function Contact() {
-  if (typeof window !== "undefined") {
     return (
-      <div>
-        {" "}
+      <>
         <main className={styles.main} id="Contact">
-          <h1 className={styles.title}>
-            <a>very</a> social.
-          </h1>
+          <div className={styles.title}>
+            <span className={styles.orange}>super</span> social.
+          </div>
           <div>
             <SocialIcon
               className={styles.social}
@@ -19,21 +17,21 @@ export default function Contact() {
               onClick={() => {
                 copyStuff("Akzel#6076");
               }}
-            ></SocialIcon>{" "}
-            <a href="mailto:axel@akzel.net?Subject=Hello!">
-              <SocialIcon
-                className={styles.social}
-                network="email"
-              ></SocialIcon>
-            </a>
+            />
+            <SocialIcon
+              className={styles.social}
+              network="email"
+              url="mailto:axel@akzel.net?Subject=Hello!"
+            />
+
             <SocialIcon
               className={styles.social}
               url="https://www.instagram.com/akzel_____/"
-            ></SocialIcon>
+            />
             <SocialIcon
               className={styles.social}
               url="https://www.linkedin.com/in/akzeldotnet/"
-            ></SocialIcon>
+            />
           </div>
           <footer className={styles.footer}>
             <Link scroll={true} href="#age">
@@ -42,18 +40,19 @@ export default function Contact() {
           </footer>
           <div className={(styles.alertBox, styles.orange)} id="alert"></div>
         </main>
-      </div>
+      </>
     );
-  } else {
-    return <h1>oopsie...</h1>;
   }
-}
 
 function copyStuff(text: string) {
-  navigator.clipboard.writeText(text);
-  document.getElementById("alert")!.innerHTML =
-    "<h1>Copied!: " + text + "</h1>";
-  setTimeout(function () {
-    document.getElementById("alert")!.innerHTML = "";
-  }, 500);
+  if (typeof window !== "undefined") {
+    navigator.clipboard.writeText(text);
+    const alertBox = document.getElementById("alert");
+    if (alertBox) {
+      alertBox.innerHTML = "<h1>Copied!: " + text + "</h1>";
+      setTimeout(function () {
+        alertBox.innerHTML = "";
+      }, 500);
+    }
+  }
 }

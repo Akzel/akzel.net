@@ -47,3 +47,30 @@ li {
   padding-left: 0;
   margin-left: 0;
 }
+
+
+
+
+
+@keyframes colorCycle {
+      0% {
+        color: red;
+      }
+      25% {
+        color: blue;
+      }
+      50% {
+        color: green;
+      }
+      75% {
+        color: yellow;
+      }
+      100% {
+        color: red;
+      }
+}
+
+#dog {
+  color: green;
+  animation: colorCycle 1s linear infinite;
+}
