@@ -5,9 +5,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-var DOG = "🐕";
-var DOWN_ARROW = "▾";
-
 export default function AgePage() {
   return (
     <main className={styles.body} id="age">
@@ -35,15 +32,15 @@ export default function AgePage() {
 
 function AgeBuilder() {
   const measureList = [
-    { divisor: 1000, name: "seconds", fixed: 2 },
+    { divisor: 1000, name: "seconds", fixed: 1 },
     { divisor: 60000, name: "minutes", fixed: 3 },
     { divisor: 3600000, name: "hours", fixed: 5 },
     { divisor: 86400000, name: "days", fixed: 6 },
+    { divisor: 604800000, name: "weeks", fixed: 7 },
+    { divisor: 2592000000, name: "months", fixed: 8 },
     { divisor: 31556952000, name: "years", fixed: 9 },
-    { divisor: 315360000000, name: "decades", fixed: 10 },
-    { divisor: 3155760000000, name: "centuries", fixed: 11 },
-    { divisor: 31556952000000, name: "millennium", fixed: 12 },
-    { divisor: 4508136000, name: "dog years", fixed: 8, note: `${DOG}` },
+    { divisor: 5700000, name: "Bug's Life™s", fixed: 5, note: '🪳' },
+    { divisor: 4508136000, name: "dog years", fixed: 8, note: '🐕' },
   ];
   const date: number = Date.now();
   const birth: number = 880710600000;
@@ -88,11 +85,11 @@ function AgeBuilder() {
               <div id={styles.timer}>{age}</div>
               <Listbox.Button as="div" className={styles.ageBtn}>
                 <span id={styles.dog}>
-                  {measure.name == "dog years" ? DOG : ""}
+                  {measure.note}
                 </span>
                 {measure.name}
                 <span id={styles.dog}>
-                  {measure.name == "dog years" ? DOG : ""}
+                  {measure.note}
                 </span>
               </Listbox.Button>
             </>
