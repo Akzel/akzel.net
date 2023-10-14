@@ -42,7 +42,7 @@ function AgeBuilder() {
     { divisor: 31556952000, name: "years", fixed: 9 },
     { divisor: 315360000000, name: "decades", fixed: 10 },
     { divisor: 3155760000000, name: "centuries", fixed: 11 },
-    { divisor: 31556952000000, name: "millennia", fixed: 12 },
+    { divisor: 31556952000000, name: "millennium", fixed: 12 },
     { divisor: 4508136000, name: "dog years", fixed: 8, note: `${DOG}` },
   ];
   const date: number = Date.now();
