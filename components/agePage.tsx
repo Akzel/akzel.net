@@ -55,7 +55,9 @@ function AgeBuilder() {
   const [currentTime, setCurrentTime] = useState(
     date ? new Date(date).getTime() : Date.now(),
   );
-  const [age, setAge] = useState("0");
+  const [age, setAge] = useState(
+    ((new Date().getTime() - birth) / measure.divisor).toFixed(measure.fixed)
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -77,12 +79,12 @@ function AgeBuilder() {
         <>
           {open || (
             <>
-              <div className={styles.title}>
+              <p className={styles.title}>
                 Hi! My name is Axel
-                <div className={styles.subtitle}>
-                  I've been here for
-                </div>
-              </div>
+                <p className={styles.subtitle}>
+                  I&apos;ve been here for
+                </p>
+              </p>
               <div id={styles.timer}>{age}</div>
               <Listbox.Button as="div" className={styles.ageBtn}>
                 <span id={styles.dog}>
