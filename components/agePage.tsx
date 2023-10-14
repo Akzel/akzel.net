@@ -39,7 +39,7 @@ function AgeBuilder() {
     { divisor: 604800000, name: "weeks", fixed: 7 },
     { divisor: 2592000000, name: "months", fixed: 8 },
     { divisor: 31556952000, name: "years", fixed: 9 },
-    { divisor: 5700000, name: "Bug's Life™s", fixed: 5, note: '🪳' },
+    { divisor: 5700000, name: "A Bug's Life™s", fixed: 5, note: '🪳' },
     { divisor: 4508136000, name: "dog years", fixed: 8, note: '🐕' },
   ];
   const date: number = Date.now();
