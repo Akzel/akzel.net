@@ -1,5 +1,5 @@
 import styles from "../styles/Home.module.css";
-import { Listbox } from "@headlessui/react";
+import { Listbox, Transition } from "@headlessui/react";
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
@@ -10,23 +10,25 @@ var DOWN_ARROW = "▾";
 
 export default function AgePage() {
   return (
-    <main className={styles.main} id="age">
-      <div className={styles.title}>
-        <Image
-          src="/wizard.png"
-          width={100}
-          height={150}
-          alt="amazing picture of pixel art wizard (which I made)"
-        >
-        </Image>
+    <main className={styles.body} id="age">
+      <div className={styles.content}>
+        <div className={styles.wizard}>
+          <Image
+            src="/wizard.png"
+            width={100}
+            height={150}
+            alt="amazing picture of pixel art wizard (which I made)"
+          >
+          </Image>
+        </div>
         <br></br>
         {AgeBuilder()}
       </div>
-      <footer className={styles.footer}>
+      <div className={styles.footer}>
         <Link scroll={true} href="#Contact">
           <a className={styles.scrollBtn}>&#9660;</a>
         </Link>
-      </footer>
+      </div>
     </main>
   );
 }
@@ -64,31 +66,52 @@ function AgeBuilder() {
   });
 
   return (
-    <>
-      Existing for<br></br>
-      {age}
-      <Listbox value={measure} onChange={updateMeasure} as="div">
-        <Listbox.Button as="a" className={styles.ageBtn}>
-          {measure.name}
-          {DOWN_ARROW}
-        </Listbox.Button>
-        <span id="dog">{measure.name == "dog years" ? DOG : ""}</span>
-        <Listbox.Options className="flex flex-column " as="div">
-          {measureList.map((m) => (
-            <Listbox.Option
-              key={m.divisor}
-              value={m}
-              as="div"
-              className={(measure.name === m.name
-                ? styles.orange
-                : styles.white,
-                styles.clickMe)}
-            >
-              {m.name} {m.note ? m.note : ""}
-            </Listbox.Option>
-          ))}
-        </Listbox.Options>
-      </Listbox>
-    </>
+    <Listbox
+      value={measure}
+      onChange={updateMeasure}
+      as="div"
+      className={styles.ageContent}
+    >
+      {({ open }) => (
+        /// HERE
+        <>
+          {open || (
+            <>
+              <div className={styles.title}>
+                Hi! My name is Axel
+                <div className={styles.subtitle}>
+                  I've been here for
+                </div>
+              </div>
+              <div id={styles.timer}>{age}</div>
+              <Listbox.Button as="div" className={styles.ageBtn}>
+                <span id={styles.dog}>
+                  {measure.name == "dog years" ? DOG : ""}
+                </span>
+                {measure.name}
+                <span id={styles.dog}>
+                  {measure.name == "dog years" ? DOG : ""}
+                </span>
+              </Listbox.Button>
+            </>
+          )}
+
+          {open && (
+            <Listbox.Options className={styles.listyBoy} as="div">
+              {measureList.map((m) => (
+                <Listbox.Option
+                  key={m.divisor}
+                  value={m}
+                  as="div"
+                  className={styles.clickMe}
+                >
+                  {m.name} {m.note ? m.note : ""}
+                </Listbox.Option>
+              ))}
+            </Listbox.Options>
+          )}
+        </>
+      )}
+    </Listbox>
   );
 }
