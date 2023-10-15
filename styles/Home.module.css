@@ -139,7 +139,7 @@
   margin: 1rem;
   background: rgba(255, 255, 255, 0.01);
   transition: all 200ms ease-in;
-  border: 1px solid #ffa50040;
+  border: 2px solid #ffa50040;
   border-radius: 5px;
   /* padding: 2rem 0rem; */
 }

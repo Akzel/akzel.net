@@ -66,7 +66,7 @@ function AgeBuilder() {
             <>
               <div className={styles.title}>
                 <h1>hi, my name is Axel</h1>
-                <h2>I&apos;ve been here for</h2>
+                <h2>I&apos;ve been alive for</h2>
               </div>
               <div id={styles.timer}>{age}</div>
               <Listbox.Button as="div" className={styles.ageBtn}>
