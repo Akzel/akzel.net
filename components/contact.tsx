@@ -2,16 +2,27 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { SocialIcon } from "react-social-icons";
 import React from "react";
+import Image from "next/image";
 
 export default function Contact() {
   return (
     <>
       <main className={styles.body} id="Contact">
         <div className={styles.content}>
-        <div className={(styles.alertBox, styles.orange)} id="alert"></div>
+          <div className={(styles.alertBox, styles.orange)} id="alert"></div>
+          <div className={styles.wizard}>
+            <Image
+              src="/wizard.png"
+              width={100}
+              height={150}
+              alt="amazing picture of pixel art wizard (which I made)"
+            >
+            </Image>
+          </div>
+
           <div className={styles.title}>
-            social <span className={styles.subtitle}>stuff</span>
-            <div>
+            <h1>social stuff</h1>
+            <div className={styles.socialContainer}>
               <SocialIcon
                 className={styles.social}
                 network="discord"

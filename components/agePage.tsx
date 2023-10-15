@@ -3,22 +3,11 @@ import { Listbox, Transition } from "@headlessui/react";
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
-import Image from "next/image";
 
 export default function AgePage() {
   return (
     <main className={styles.body} id="age">
       <div className={styles.content}>
-        <div className={styles.wizard}>
-          <Image
-            src="/wizard.png"
-            width={100}
-            height={150}
-            alt="amazing picture of pixel art wizard (which I made)"
-          >
-          </Image>
-        </div>
-        <br></br>
         {AgeBuilder()}
       </div>
       <div className={styles.footer}>
@@ -37,10 +26,10 @@ function AgeBuilder() {
     { divisor: 3600000, name: "hours", fixed: 5 },
     { divisor: 86400000, name: "days", fixed: 6 },
     { divisor: 604800000, name: "weeks", fixed: 7 },
-    { divisor: 2592000000, name: "months", fixed: 8 },
-    { divisor: 31556952000, name: "years", fixed: 9 },
-    { divisor: 5700000, name: "A Bug's Life™s", fixed: 5, note: '🪳' },
-    { divisor: 4508136000, name: "dog years", fixed: 8, note: '🐕' },
+    { divisor: 2629800000, name: "months", fixed: 8 },
+    { divisor: 31557600000, name: "years", fixed: 9 },
+    { divisor: 5700000, name: "Bug's Life™s", fixed: 5, note: "🪳" },
+    { divisor: 4508136000, name: "dog years", fixed: 8, note: "🐕" },
   ];
   const date: number = Date.now();
   const birth: number = 880710600000;
@@ -53,7 +42,7 @@ function AgeBuilder() {
     date ? new Date(date).getTime() : Date.now(),
   );
   const [age, setAge] = useState(
-    ((new Date().getTime() - birth) / measure.divisor).toFixed(measure.fixed)
+    ((new Date().getTime() - birth) / measure.divisor).toFixed(measure.fixed),
   );
 
   useEffect(() => {
@@ -72,16 +61,13 @@ function AgeBuilder() {
       className={styles.ageContent}
     >
       {({ open }) => (
-        /// HERE
         <>
           {open || (
             <>
-              <p className={styles.title}>
-                Hi! My name is Axel
-                <p className={styles.subtitle}>
-                  I&apos;ve been here for
-                </p>
-              </p>
+              <div className={styles.title}>
+                <h1>hi, my name is Axel</h1>
+                <h2>I&apos;ve been here for</h2>
+              </div>
               <div id={styles.timer}>{age}</div>
               <Listbox.Button as="div" className={styles.ageBtn}>
                 <span id={styles.dog}>
