@@ -33,7 +33,7 @@ function AgeBuilder() {
   ];
   const date: number = Date.now();
   const birth: number = 880710600000;
-  const [measure, setMeasure] = useState(measureList[4]);
+  const [measure, setMeasure] = useState(measureList[6]);
   const updateMeasure = (newMeasure: any) => {
     setMeasure(newMeasure);
   };
