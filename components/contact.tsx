@@ -38,7 +38,7 @@ export default function Contact() {
 
               <SocialIcon
                 className={styles.social}
-                url="https://www.instagram.com/akzel_____/"
+                url="https://www.instagram.com/akzeldotnet/"
               />
               <SocialIcon
                 className={styles.social}
@@ -48,8 +48,8 @@ export default function Contact() {
           </div>
         </div>
         <div className={styles.footer}>
-          <Link scroll={true} href="#age">
-            <a className={styles.scrollBtn}>&#9650;</a>
+          <Link scroll={true} href="#age" className = {styles.scrollBtn}>
+            &#9650;
           </Link>
         </div>
       </main>

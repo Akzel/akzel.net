@@ -10,11 +10,7 @@ export default function AgePage() {
       <div className={styles.content}>
         {AgeBuilder()}
       </div>
-      <div className={styles.footer}>
-        <Link scroll={true} href="#Contact">
-          <a className={styles.scrollBtn}>&#9660;</a>
-        </Link>
-      </div>
+
     </main>
   );
 }
@@ -45,7 +41,10 @@ function AgeBuilder() {
     ((new Date().getTime() - birth) / measure.divisor).toFixed(measure.fixed),
   );
 
+  const [isClient, setIsClient] = useState(false);
   useEffect(() => {
+    setIsClient(true);
+
     const interval = setInterval(() => {
       setCurrentTime(new Date().getTime());
       setAge(((currentTime - birth) / measure.divisor).toFixed(measure.fixed));
@@ -58,26 +57,34 @@ function AgeBuilder() {
       value={measure}
       onChange={updateMeasure}
       as="div"
-      className={styles.ageContent}
     >
       {({ open }) => (
         <>
           {open || (
             <>
-              <div className={styles.title}>
-                <h1>hi, my name is Axel</h1>
-                <h2>I&apos;ve been alive for</h2>
+              <div className={styles.ageContent}>
+                <div className={styles.title}>
+                  <h1>hi, my name is Axel</h1>
+                  <h2>I&apos;ve been alive for</h2>
+                </div>
+                <div id={styles.timer}>{isClient ? age : 'ERROR'}</div>
+
+                <Listbox.Button as="div" className={styles.ageBtn}>
+                  <span id={styles.dog}>
+                    {measure.note}
+                  </span>
+                  {measure.name}
+                  <span id={styles.dog}>
+                    {measure.note}
+                  </span>
+                </Listbox.Button>
+
               </div>
-              <div id={styles.timer}>{age}</div>
-              <Listbox.Button as="div" className={styles.ageBtn}>
-                <span id={styles.dog}>
-                  {measure.note}
-                </span>
-                {measure.name}
-                <span id={styles.dog}>
-                  {measure.note}
-                </span>
-              </Listbox.Button>
+              <div className={styles.footer}>
+                <Link scroll={true} href="#Contact" className={styles.scrollBtn}>
+                  &#9660;
+                </Link>
+              </div>
             </>
           )}
 
@@ -96,7 +103,8 @@ function AgeBuilder() {
             </Listbox.Options>
           )}
         </>
-      )}
-    </Listbox>
+      )
+      }
+    </Listbox >
   );
 }

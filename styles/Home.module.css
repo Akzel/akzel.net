@@ -20,13 +20,11 @@
   /* height: 20vh; */
   /* width: 100%; */
   display: flex;
+flex-direction: row;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  bottom: 15%;
+
   transition: all 200ms ease-in;
-  /* border: 1px solid green; */
-  /* background: rgba(0, 255, 0, 0.15); */
 }
 
 .title {
@@ -54,16 +52,9 @@
 }
 
 .content {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  display:flex;
+  flex-direction:column;
   align-items: center;
-  justify-content: center;
-  /* background: rgba(255, 0, 0, 0.15); */
-  position: relative;
-  /* border: 1px solid red; */
-  /* width: 100vw; */
 }
 @keyframes colorCycle {
   0% {
@@ -95,12 +86,10 @@
   border: 1px solid orange;
 }
 .ageContent {
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  position: relative;
 }
 #dog {
   animation: colorCycle 1s linear infinite alternate;
@@ -134,6 +123,7 @@
 }
 
 .ageBtn {
+  width: fit-content;
   font-size: 1.5rem;
   padding: 1.5rem;
   margin: 1rem;
@@ -197,3 +187,4 @@
 .socialContainer {
   margin: 1rem;
 }
+
