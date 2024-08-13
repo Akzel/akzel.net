@@ -1,5 +1,5 @@
 import styles from "../styles/Home.module.css";
-import { Listbox, Transition } from "@headlessui/react";
+import { Listbox } from "@headlessui/react";
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
@@ -81,7 +81,7 @@ function AgeBuilder() {
 
               </div>
               <div className={styles.footer}>
-                <Link scroll={true} href="#Contact" className={styles.scrollBtn}>
+                <Link scroll={true} href="#art" className={styles.scrollBtn}>
                   &#9660;
                 </Link>
               </div>

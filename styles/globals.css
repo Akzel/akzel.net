@@ -3,25 +3,27 @@ html {
   background-color: #121212;
   color: white;
   padding: 0;
-  margin: 0;
-}
-body {
-  padding: 0;
-  margin: 0;
-
+  margin: 0px;
   height: 100vh;
   width: 100vw;
 }
+
+.body {
+  height: 100vh;
+  width: 100vw;
+}
+
 /* Hide webkit-based scrollbar */
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* Remove outlines on all div elements */
-div {
-  outline: none;
-  /* border: 2px solid red; */
+body {
+  margin: 0;
+  padding: 0
 }
-h1, h2 {
+
+h1,
+h2 {
   margin: 0;
 }
