@@ -27,8 +27,8 @@ export default function Gallery() {
             height: "70vh",
             width: "auto"
           }}
-          width={500}
-          height={300} />
+          width={300}
+          height={400} />
       </div>
       <div className={styles.footer}>
         <div className={`${styles.scrollBtn} ${styles.prevPic}`} onClick={prevPic}>&#9664;</div>
