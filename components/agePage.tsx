@@ -41,9 +41,7 @@ function AgeBuilder() {
     ((new Date().getTime() - birth) / measure.divisor).toFixed(measure.fixed),
   );
 
-  const [isClient, setIsClient] = useState(false);
   useEffect(() => {
-    setIsClient(true);
 
     const interval = setInterval(() => {
       setCurrentTime(new Date().getTime());
@@ -67,7 +65,7 @@ function AgeBuilder() {
                   <h1>hi, my name is Axel</h1>
                   <h2>I&apos;ve been alive for</h2>
                 </div>
-                <div id={styles.timer}>{isClient ? age : 'ERROR'}</div>
+                <div id={styles.timer}>{age}</div>
 
                 <Listbox.Button as="div" className={styles.ageBtn}>
                   <span id={styles.dog}>

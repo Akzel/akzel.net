@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from "../styles/Home.module.css";
 const PIC_COUNT = 16;
 
-export default function gallery() {
+export default function Gallery() {
   const [current, setCurrent] = useState(0);
   function nextPic() {
     setCurrent((prev) => (prev + 1) % PIC_COUNT);
