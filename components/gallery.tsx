@@ -17,11 +17,11 @@ export default function Gallery() {
     <div className={styles.galleryContainer}>
       <div className={styles.pics}>
         <Image
-          priority={false}
+          priority={true}
           src={`/art/${current}.jpg`}
           placeholder='blur'
           blurDataURL={`/art/${current}.jpg`}
-          alt="indeed"
+          alt="My paintings"
           sizes="100vw"
           style={{
             height: "70vh",
