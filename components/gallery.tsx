@@ -12,7 +12,7 @@ export default function Gallery() {
     const preloadImages = () => {
       let images: string[] = [];
       for (let i = 0; i < PIC_COUNT; i++) {
-        const img = new HTMLImageElement();
+        const img = new Image();
         img.src = `/art/${i}.jpg`;
         images.push(img.src);
       }
@@ -44,7 +44,8 @@ export default function Gallery() {
           width={300}
           height={400}
           onError={(e) => {
-            e.target.src = "/default.jpg";
+            const target = e.target as HTMLImageElement;
+            target.src = "/default.jpg";
           }}
         />
       </div>
