@@ -27,6 +27,7 @@ export default function Gallery() {
             height: "70vh",
             width: "auto"
           }}
+          quality={20} 
           width={300}
           height={400} />
       </div>
