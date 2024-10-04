@@ -12,7 +12,7 @@ export default function Gallery() {
     const preloadImages = () => {
       let images: string[] = [];
       for (let i = 0; i < PIC_COUNT; i++) {
-        const img = new Image();
+        const img = new HTMLImageElement();
         img.src = `/art/${i}.jpg`;
         images.push(img.src);
       }
