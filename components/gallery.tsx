@@ -43,10 +43,6 @@ export default function Gallery() {
           quality={100}
           width={300}
           height={400}
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.src = "/default.jpg";
-          }}
         />
       </div>
       <div className={styles.footer}>
