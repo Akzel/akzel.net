@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css";
-const PIC_COUNT = 16;
+const PIC_COUNT = 30;
 
 export default function Gallery() {
   const [current, setCurrent] = useState(0);
